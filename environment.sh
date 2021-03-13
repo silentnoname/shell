@@ -30,9 +30,4 @@ echo -e "\n\ngcc版本信息" && gcc -v;
 echo -e "\n\ngit版本信息" && git --version;
 echo -e "\n\nnodejs版本信息" && node -v;
 echo -e "\n\nyarn版本信息" && yarn -v;
-echo -e "\n\n请运行source $HOME/.profile 来激活go，并运行go version检查版本和安装情况"
-
-
-
-
-
+echo -e "\n\n请运行 sudo source $HOME/.profile； 来激活go，并运行go version检查版本和安装情况"
