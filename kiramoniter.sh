@@ -1,4 +1,4 @@
-a=$(sekaid query validator --addr kira1gdv8wpvr78hzq9quq7gaeu3tfrhe3zc2jv6nrq | grep status |awk '{ print $2 }');
+a=$(sekaid query validator --addr xxx | grep status |awk '{ print $2 }');
 while true
 do
 	if [[ "$a" == "INACTIVE" ]];then
