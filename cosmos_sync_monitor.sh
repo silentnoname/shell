@@ -20,11 +20,11 @@ monitor()
     if [[ $sync -le $tempsync ]];then
       echo $(date) "You node not syncing for 3 min, will restart your node. Last time "$tempsync", Now "$sync""
       restart
-      tempsync=sync
+      tempsync=$sync
     else 
         echo $(date) "You node sync is normal. Now block "$sync""
     fi
-    tempsync=sync
+    tempsync=$sync
     sleep 180
     done
 }
