@@ -1,18 +1,18 @@
 check_sync()
 {
-    sync=$(curl -s localhost:26657/status | jq .result.sync_info.latest_block_height | grep -o '[0-9]*')
-    echo -n  ${sync}
+        sync=$(curl -s localhost:26657/status | jq .result.sync_info.latest_block_height | grep -o '[0-9]*')
+        echo -n  ${sync}
 }
 
 restart()
 {
-    echo $(date) "Your node stop sync, will restart your node"
-    sudo systemctl restart cosmovisor
-    sleep 60
+        echo $(date) "Your node stop sync, will restart your node"
+        sudo systemctl restart cosmovisor
+        sleep 180
 }
-
 monitor()
 {  
+
     echo $(date) "Start monitor your node"
     tempsync=0
     while true; do
@@ -20,7 +20,7 @@ monitor()
     if [[ $sync -le $tempsync ]];then
       echo $(date) "You node not syncing for 3 min, will restart your node. Last time "$tempsync", Now "$sync""
       restart
-      tempsync=$sync
+      sync=0
     else 
         echo $(date) "You node sync is normal. Now block "$sync""
     fi
